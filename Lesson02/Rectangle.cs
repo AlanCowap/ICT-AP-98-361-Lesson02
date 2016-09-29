@@ -11,12 +11,15 @@ namespace Lesson02
      *  1.0 Inital iteration of class
      *  1.1 Remove constructor, replace with Properties (inc get and set) Length & Width
      *  1.2 Add sample code for auto-implemented properties
+     *  1.3 Add Event publication when length changed
      */
 
     class Rectangle
     {
         private double length;
         private double width;
+        public event EventHandler Changed;
+
         //Properties
         public double Length    // convention is properties are public, and name begins with uppercase letter
         {
@@ -27,7 +30,10 @@ namespace Lesson02
             set
             {
                 if (value > 0.0)   // Properties allow for validation
+                {
                     length = value; // 'value' is a keyword
+                    Changed(this, EventArgs.Empty); // publish an event
+                }
             }
         }
         public double Width
