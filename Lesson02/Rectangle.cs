@@ -8,9 +8,9 @@ namespace Lesson02
 {
 
     /**
-     *  1.0 inital iteration of class
-     *  1.1 remove constructor, replace with Properties (inc get and set) Length & Width
-     *
+     *  1.0 Inital iteration of class
+     *  1.1 Remove constructor, replace with Properties (inc get and set) Length & Width
+     *  1.2 Add sample code for auto-implemented properties
      */
 
     class Rectangle
@@ -43,6 +43,11 @@ namespace Lesson02
             }
         }
 
+        //Auto-implemented Properties (since version 3), convenient if a simple set and/or get.
+        // can have either get or set (since version 6)
+        //public double Length { get; set; }
+        //public double width { get; set; }
+        
 
         public double GetArea()
         {
