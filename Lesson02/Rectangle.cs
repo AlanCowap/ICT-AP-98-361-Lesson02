@@ -13,6 +13,7 @@ namespace Lesson02
      *  1.2 Add sample code for auto-implemented properties
      *  1.3 Add Event publication when length changed
      *  1.4 Add ShapeName property, modify GetArea() to use properties rather than fields
+     *  1.5 Add a struct: Point
      */
 
     class Rectangle
@@ -66,4 +67,11 @@ namespace Lesson02
             return this.Length * this.Width;
         }
     }
+
+    //Add a struct
+    struct Point
+    {
+        public double X, Y;
+    }
+
 }

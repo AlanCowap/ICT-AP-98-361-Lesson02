@@ -11,6 +11,7 @@ namespace Lesson02
  *  1.1 modify to work with version 1.1 of Lesson02.Rectangle class
  *  1.2 add event subscription and handling code
  *  1.3 add call to ShapeName property of Rectangle class
+ *  1.4 add code for using struct 'Point'
  */
 
     class Program
@@ -18,6 +19,15 @@ namespace Lesson02
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Lesson02");
+
+            //Create a couple of structs and see how they operate
+            Point p1 = new Lesson02.Point();
+            p1.X = 10;
+            p1.Y = 20;
+            Point p2 = p1;  //p2 struct is a copy of p1 struct, since structs are value types (not reference types)
+            p2.X = 100;     // this affects only p2 struct, but no effect on p1 struct
+            Console.WriteLine("p1.X = {0}, p2.X = {1}", p1.X, p2.X);
+
             //Create a Rectangle object, get it's area.
             Rectangle rect = new Rectangle();
             rect.Changed += new EventHandler(r_changed);    //subscribe to the event
