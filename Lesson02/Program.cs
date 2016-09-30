@@ -10,7 +10,7 @@ namespace Lesson02
  *  1.0 inital iteration of class
  *  1.1 modify to work with version 1.1 of Lesson02.Rectangle class
  *  1.2 add event subscription and handling code
- *
+ *  1.3 add call to ShapeName property of Rectangle class
  */
 
     class Program
@@ -24,7 +24,7 @@ namespace Lesson02
             rect.Length = 10.0;
             rect.Width = 20.0;
             double area = rect.GetArea();
-            Console.WriteLine("Area of Rectangle: {0}", area);
+            Console.WriteLine("Shape Name: {0} Area of {0}: {1}", Rectangle.ShapeName, area);
         }
 
         //Callback code to be executed when event is published
