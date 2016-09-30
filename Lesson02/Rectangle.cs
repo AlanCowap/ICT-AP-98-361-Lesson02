@@ -14,42 +14,50 @@ namespace Lesson02
      *  1.3 Add Event publication when length changed
      *  1.4 Add ShapeName property, modify GetArea() to use properties rather than fields
      *  1.5 Add a struct: Point
+     *  1.6 Extend Polygon, Add constructor, Remove Property for Length and Width (since now inherited from Polygon).
      */
 
-    class Rectangle
+    class Rectangle : Polygon
     {
-        private double length;
-        private double width;
+        //private double length;
+        //private double width;
         public event EventHandler Changed;
 
+        //Constructor
+        public Rectangle(double length, double width)
+        {
+            Length = length;
+            Width = width;
+        }
+
         //Properties
-        public double Length    // convention is properties are public, and name begins with uppercase letter
-        {
-            get
-            {
-                return length;
-            }
-            set
-            {
-                if (value > 0.0)   // Properties allow for validation
-                {
-                    length = value; // 'value' is a keyword
-                    Changed(this, EventArgs.Empty); // publish an event
-                }
-            }
-        }
-        public double Width
-        {
-            get
-            {
-                return width;
-            }
-            set
-            {
-                if (value > 0.0)
-                    width = value;
-            }
-        }
+        //public double Length    // convention is properties are public, and name begins with uppercase letter
+        //{
+        //    get
+        //    {
+        //        return length;
+        //    }
+        //    set
+        //    {
+        //        if (value > 0.0)   // Properties allow for validation
+        //        {
+        //            length = value; // 'value' is a keyword
+        //            Changed(this, EventArgs.Empty); // publish an event
+        //        }
+        //    }
+        //}
+        //public double Width
+        //{
+        //    get
+        //    {
+        //        return width;
+        //    }
+        //    set
+        //    {
+        //        if (value > 0.0)
+        //            width = value;
+        //    }
+        //}
 
         public static string ShapeName
         {
@@ -64,7 +72,7 @@ namespace Lesson02
 
         public double GetArea()
         {
-            return this.Length * this.Width;
+            return Length * Width;
         }
     }
 

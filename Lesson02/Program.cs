@@ -29,12 +29,12 @@ namespace Lesson02
             Console.WriteLine("p1.X = {0}, p2.X = {1}", p1.X, p2.X);
 
             //Create a Rectangle object, get it's area.
-            Rectangle rect = new Rectangle();
+            Rectangle rect = new Rectangle(10, 20);
             rect.Changed += new EventHandler(r_changed);    //subscribe to the event
-            rect.Length = 10.0;
-            rect.Width = 20.0;
+            //rect.Length = 10.0;
+            //rect.Width = 20.0;
             double area = rect.GetArea();
-            Console.WriteLine("Shape Name: {0} Area of {0}: {1}", Rectangle.ShapeName, area);
+            Console.WriteLine("Shape Name: {0} Width={1} Length={2}, Area={3}", Rectangle.ShapeName, rect.Width, rect.Length, area);
         }
 
         //Callback code to be executed when event is published
