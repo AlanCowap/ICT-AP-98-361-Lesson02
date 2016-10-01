@@ -15,6 +15,7 @@ namespace Lesson02
      *  1.4 Add ShapeName property, modify GetArea() to use properties rather than fields
      *  1.5 Add a struct: Point
      *  1.6 Extend Polygon, Add constructor, Remove Property for Length and Width (since now inherited from Polygon).
+     *  1.7 Make GetArea() override the base class
      */
 
     class Rectangle : Polygon
@@ -70,7 +71,7 @@ namespace Lesson02
         //public double width { get; set; }
         
 
-        public double GetArea()
+        public override double GetArea()
         {
             return Length * Width;
         }
