@@ -13,6 +13,7 @@ namespace Lesson02
  *  1.3 add call to ShapeName property of Rectangle class
  *  1.4 add code for using struct 'Point'
  *  1.5 add code to demo Polymorphism
+ *  1.6 add code comparing 2 objects (who implement IComparable)
  *  
  */
 
@@ -45,6 +46,15 @@ namespace Lesson02
             polygons.Add(new Triangle());
             foreach(Polygon p in polygons)
                 p.Draw();
+
+            //Compare objects
+            Rectangle rect1 = new Rectangle(10, 20);
+            Rectangle rect2 = new Rectangle(100, 200);
+            Console.WriteLine(rect1.CompareTo(rect2));
+            Console.WriteLine(rect2.CompareTo(rect1));
+            Console.WriteLine(rect1.CompareTo(rect1));
+            Console.WriteLine(rect2.CompareTo(rect2));
+
         }
 
         //Callback code to be executed when event is published

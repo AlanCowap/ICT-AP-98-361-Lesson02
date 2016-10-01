@@ -17,10 +17,11 @@ namespace Lesson02
      *  1.6 Extend Polygon, Add constructor, Remove Property for Length and Width (since now inherited from Polygon).
      *  1.7 Make GetArea() override the base class
      *  1.8 Implement Draw()
+     *  1.9 Implement IComparable
      *  
      */
 
-    class Rectangle : Polygon
+    class Rectangle : Polygon, IComparable
     {
         //private double length;
         //private double width;
@@ -83,6 +84,23 @@ namespace Lesson02
             Console.WriteLine("Drawing: Rectangle");
         }
 
+        //Implement CompareTo as defined by IComparable interface
+        public int CompareTo(object obj)
+        {
+            if (null == obj)
+                return 1;
+            if (!(obj is Rectangle))
+                throw new ArgumentException();
+
+            Rectangle target = (Rectangle)obj;
+            double diff = this.GetArea() - target.GetArea();
+
+            if (0 == diff)
+                return 0;       //same
+            else if (diff > 0)  //this object is 'bigger'
+                return 1;
+            else return -1;     //other object is 'bigger'
+        }
 
     }
 
