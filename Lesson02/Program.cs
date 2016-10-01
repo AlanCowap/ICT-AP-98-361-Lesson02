@@ -12,6 +12,8 @@ namespace Lesson02
  *  1.2 add event subscription and handling code
  *  1.3 add call to ShapeName property of Rectangle class
  *  1.4 add code for using struct 'Point'
+ *  1.5 add code to demo Polymorphism
+ *  
  */
 
     class Program
@@ -35,6 +37,14 @@ namespace Lesson02
             //rect.Width = 20.0;
             double area = rect.GetArea();
             Console.WriteLine("Shape Name: {0} Width={1} Length={2}, Area={3}", Rectangle.ShapeName, rect.Width, rect.Length, area);
+
+            //Polymorphism
+            List<Polygon> polygons = new List<Polygon>();
+            polygons.Add(new Polygon());
+            polygons.Add(new Rectangle(30,40));
+            polygons.Add(new Triangle());
+            foreach(Polygon p in polygons)
+                p.Draw();
         }
 
         //Callback code to be executed when event is published

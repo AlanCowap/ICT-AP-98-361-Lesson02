@@ -16,6 +16,8 @@ namespace Lesson02
      *  1.5 Add a struct: Point
      *  1.6 Extend Polygon, Add constructor, Remove Property for Length and Width (since now inherited from Polygon).
      *  1.7 Make GetArea() override the base class
+     *  1.8 Implement Draw()
+     *  
      */
 
     class Rectangle : Polygon
@@ -71,10 +73,17 @@ namespace Lesson02
         //public double width { get; set; }
         
 
-        public override double GetArea()
+        public double GetArea()
         {
             return Length * Width;
         }
+
+        public override void Draw()
+        {
+            Console.WriteLine("Drawing: Rectangle");
+        }
+
+
     }
 
     //Add a struct
